@@ -25,3 +25,10 @@ const sliderBg = new Swiper('.slider--bg', {
 
 //связываем слайды между собой
 sliderMain.controller.control = sliderBg
+
+//открытие слайда при клике на него
+document.querySelectorAll('.slider__item').forEach(item => {
+	item.addEventListener('click', event => {
+		item.classList.toggle('opened')
+	})
+})

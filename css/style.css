@@ -44,6 +44,7 @@ body, html {
 	max-height: 75vh;
 	overflow: hidden;
 	cursor: pointer;
+	transition: transform var(--transition), box-shadow var(--transition);
 }
 .slider__image {
 	width: 300%; /*увеличивеам ширину для будущего паралакса*/
@@ -60,6 +61,15 @@ body, html {
 	transform: rotate(-20deg) !important;
 	top: -90vh;
 	left: -10vh;
+	opacity: 0.25;
+	filter: blur(120px) saturate(10);
 }
-
+.slider--bg .slider__item {
+	max-height: 100vh;
+}
+.slider__item.opened {/*стилизуем открытый после js слайд*/
+	z-index: 2;
+	transform: rotate(-15deg) scale(1.45);
+	box-shadow: rgba(0 0 0 /.75) 0 0 0 10000px; /*создание тени при открытии слайда*/
+}
 
