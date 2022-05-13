@@ -14,3 +14,14 @@ const sliderMain = new Swiper('.slider--main', {
 		}
 	}
 })
+
+//фоновый слой
+const sliderBg = new Swiper('.slider--bg', {
+	centeredSlides: true, //первый слайд находится в центре
+	parallax: true, //паралакс
+	spaceBetween: 60,
+	slidesPerView: 3.5
+})
+
+//связываем слайды между собой
+sliderMain.controller.control = sliderBg
